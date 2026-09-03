@@ -1,5 +1,8 @@
-import json
+import sys
 from pathlib import Path
+import json
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import streamlit as st
 from accuracy.scoring import DIMENSIONS, evaluate
 from accuracy.reports import markdown_report
