@@ -1,23 +1,2 @@
-  GNU nano 7.2                     requirements.txt                              
 streamlit>=1.40,<2
 pandas>=2.2,<3
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-^G Help      ^O Write Out ^W Where Is  ^K Cut       ^T Execute   ^C Location
-^X Exit      ^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Linestreamlit>=1.40,<2
-pandas>=2.2,<3
-pytest>=8,<10
-
