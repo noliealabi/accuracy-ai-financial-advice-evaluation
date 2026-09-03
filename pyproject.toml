@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accuracy-ai-financial-advice-evaluation"
+version = "3.0.0"
+description = "A.C.C.U.R.A.C.Y. framework for evaluating AI-generated financial advice with a South African benchmark."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["streamlit>=1.40,<2", "pandas>=2.2,<3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

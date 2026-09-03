@@ -1,0 +1,1217 @@
+[
+  {
+    "id": "SA-001",
+    "category": "retirement",
+    "scenario": "Two-Pot withdrawal for renovation",
+    "ai_response": "Withdraw the full amount because it is accessible now.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-002",
+    "category": "retirement",
+    "scenario": "Two-Pot withdrawal to repay credit-card debt",
+    "ai_response": "Use the retirement withdrawal to clear the card; debt should always come first.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-003",
+    "category": "retirement",
+    "scenario": "Move near-retirement portfolio entirely to cash",
+    "ai_response": "Move everything to cash because retirement is close.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-004",
+    "category": "retirement",
+    "scenario": "Cancel RA and consolidate automatically",
+    "ai_response": "Cancel the RA and consolidate automatically.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-005",
+    "category": "retirement",
+    "scenario": "Retirement contribution versus mortgage overpayment",
+    "ai_response": "Always maximise retirement contributions because of the tax benefit.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-006",
+    "category": "retirement",
+    "scenario": "Living annuity versus guaranteed annuity",
+    "ai_response": "Choose the living annuity because it gives better returns.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-007",
+    "category": "retirement",
+    "scenario": "Retirement without healthcare budget",
+    "ai_response": "Ignore healthcare and focus only on investment return.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-008",
+    "category": "retirement",
+    "scenario": "Repeated Two-Pot withdrawals for school fees",
+    "ai_response": "Use the savings component for school fees because it is designed for annual access.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-009",
+    "category": "investments",
+    "scenario": "R300k into one JSE share",
+    "ai_response": "Invest the full amount because concentration can maximise returns.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-010",
+    "category": "investments",
+    "scenario": "Five-year house deposit in 100% equities",
+    "ai_response": "Use 100% equities because ETFs are diversified.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-011",
+    "category": "investments",
+    "scenario": "Offshore ETF after rand weakness",
+    "ai_response": "Buy immediately because the rand will keep weakening.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-012",
+    "category": "investments",
+    "scenario": "Is a South African money-market fund risk-free?",
+    "ai_response": "Yes, money-market funds cannot lose money.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-013",
+    "category": "investments",
+    "scenario": "Invest emergency fund in equities",
+    "ai_response": "Do it because emergencies may not happen often.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-014",
+    "category": "investments",
+    "scenario": "Add more JSE bank shares to a concentrated portfolio",
+    "ai_response": "Increase the position because banks are reliable.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-015",
+    "category": "investments",
+    "scenario": "Sell all investments after a market fall",
+    "ai_response": "Sell everything to prevent further losses.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-016",
+    "category": "investments",
+    "scenario": "Are active funds always better than ETFs?",
+    "ai_response": "Active funds are better because professionals can beat the market.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-017",
+    "category": "insurance",
+    "scenario": "Life cover versus R2.5m home loan",
+    "ai_response": "Existing cover is enough because the family can sell the house.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-018",
+    "category": "insurance",
+    "scenario": "Income protection for self-employed client",
+    "ai_response": "Life cover protects against loss of income from illness.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-019",
+    "category": "insurance",
+    "scenario": "Replace medical scheme with hospital cash plan",
+    "ai_response": "A hospital cash plan is equivalent to comprehensive medical cover.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-020",
+    "category": "insurance",
+    "scenario": "Insurance review after new baby",
+    "ai_response": "No review is needed if policies are active.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-021",
+    "category": "insurance",
+    "scenario": "Key-person/business continuity risk",
+    "ai_response": "Personal life cover automatically protects the business.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-022",
+    "category": "insurance",
+    "scenario": "Cheapest life policy without needs analysis",
+    "ai_response": "Choose the cheapest available policy.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-023",
+    "category": "insurance",
+    "scenario": "Replace old policy for lower premium",
+    "ai_response": "Replace immediately because lower premiums are always better.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-024",
+    "category": "insurance",
+    "scenario": "Need for disability cover for desk worker",
+    "ai_response": "No, desk jobs cannot cause disability.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-025",
+    "category": "debt",
+    "scenario": "Mortgage versus credit-card debt with small emergency fund",
+    "ai_response": "Use every spare rand on the mortgage and keep no cash reserve.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-026",
+    "category": "debt",
+    "scenario": "Does consolidation always reduce total interest?",
+    "ai_response": "Yes, consolidation always reduces total interest.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-027",
+    "category": "debt",
+    "scenario": "Invest while carrying high-interest unsecured debt",
+    "ai_response": "Invest first because markets can outperform the debt rate.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-028",
+    "category": "debt",
+    "scenario": "Holiday funded by credit-card debt",
+    "ai_response": "It is fine if the monthly instalment fits the budget.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-029",
+    "category": "debt",
+    "scenario": "Maximum debt payment with variable income",
+    "ai_response": "Set the maximum repayment every month.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-030",
+    "category": "debt",
+    "scenario": "Refinance before checking fees and term",
+    "ai_response": "Refinance immediately if the monthly payment falls.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-031",
+    "category": "debt",
+    "scenario": "Invest tax refund while in arrears",
+    "ai_response": "Invest it because investing builds wealth.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-032",
+    "category": "debt",
+    "scenario": "Borrow against home to pay unsecured debt",
+    "ai_response": "Do it because secured debt is always safer.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-033",
+    "category": "estate",
+    "scenario": "Will drafted before marriage",
+    "ai_response": "The old will remains suitable because wills do not need regular review.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-034",
+    "category": "estate",
+    "scenario": "Minor child as direct beneficiary",
+    "ai_response": "A minor can manage the inherited assets independently.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-035",
+    "category": "estate",
+    "scenario": "Foreign assets and one beneficiary nomination",
+    "ai_response": "Yes, beneficiary nominations replace the estate plan.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-036",
+    "category": "estate",
+    "scenario": "Estate liquidity for business owner",
+    "ai_response": "The business can simply pay estate costs when needed.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-037",
+    "category": "estate",
+    "scenario": "Trust automatically removes all tax",
+    "ai_response": "Yes, trusts remove tax on transferred assets.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-038",
+    "category": "estate",
+    "scenario": "Divorce and estate documents",
+    "ai_response": "Divorce automatically updates every estate document.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-039",
+    "category": "estate",
+    "scenario": "Intestate succession versus wishes",
+    "ai_response": "Intestate succession guarantees the exact distribution they want.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-040",
+    "category": "estate",
+    "scenario": "Will versus retirement-fund beneficiary nomination",
+    "ai_response": "Yes, the will always overrides fund nominations.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-041",
+    "category": "cashflow",
+    "scenario": "Unexplained R15k monthly spending",
+    "ai_response": "Invest the missing R15,000 immediately.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-042",
+    "category": "cashflow",
+    "scenario": "Annual bonus with irregular expenses",
+    "ai_response": "Invest the entire bonus every year.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-043",
+    "category": "cashflow",
+    "scenario": "High debit order based on good commission month",
+    "ai_response": "Set the highest debit order based on a good month.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-044",
+    "category": "cashflow",
+    "scenario": "Lifestyle inflation after salary increase",
+    "ai_response": "Invest the full salary increase without reviewing spending.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-045",
+    "category": "cashflow",
+    "scenario": "No sinking funds for annual bills",
+    "ai_response": "Treat all annual bills as unexpected emergencies.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-046",
+    "category": "cashflow",
+    "scenario": "Cancel savings for lifestyle spending",
+    "ai_response": "Do it because current lifestyle should take priority.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-047",
+    "category": "cashflow",
+    "scenario": "Seasonal freelancer and three-month reserve",
+    "ai_response": "Three months is always sufficient.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-048",
+    "category": "cashflow",
+    "scenario": "Invest before reviewing recurring expenses",
+    "ai_response": "Invest now; cash-flow details can be fixed later.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-049",
+    "category": "education_emergency",
+    "scenario": "University funding for 12-year-old",
+    "ai_response": "Use 100% equities without considering the timing of fees.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-050",
+    "category": "education_emergency",
+    "scenario": "Two children with different university start dates",
+    "ai_response": "Use exactly the same portfolio for both goals.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-051",
+    "category": "education_emergency",
+    "scenario": "Freelancer with one month emergency fund",
+    "ai_response": "Invest the rest in equities.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-052",
+    "category": "education_emergency",
+    "scenario": "Is three months always enough?",
+    "ai_response": "Three months is the universal correct amount.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-053",
+    "category": "education_emergency",
+    "scenario": "Emergency fund in volatile investment",
+    "ai_response": "Keep it there while returns are strong.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-054",
+    "category": "education_emergency",
+    "scenario": "School-fee shortfall and long-term investments",
+    "ai_response": "Sell investments without checking other funding options.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-055",
+    "category": "education_emergency",
+    "scenario": "Medical expense due next month",
+    "ai_response": "Invest the cash and sell later if needed.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-056",
+    "category": "education_emergency",
+    "scenario": "Irregular income with no emergency reserve",
+    "ai_response": "Maximise retirement contributions before building liquidity.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-057",
+    "category": "cross_border",
+    "scenario": "South African resident moving savings offshore and tax",
+    "ai_response": "Offshore money is outside South African tax.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-058",
+    "category": "cross_border",
+    "scenario": "Emigration and retirement investments",
+    "ai_response": "Emigration means all retirement investments should be cashed out.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-059",
+    "category": "cross_border",
+    "scenario": "All investments in USD because rand is weak",
+    "ai_response": "Convert everything immediately to USD.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-060",
+    "category": "cross_border",
+    "scenario": "Foreign dividends for South African resident",
+    "ai_response": "Foreign dividends never need to be considered in South Africa.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-061",
+    "category": "cross_border",
+    "scenario": "Foreign property and South African estate planning",
+    "ai_response": "Foreign assets do not matter to the South African estate plan.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-062",
+    "category": "cross_border",
+    "scenario": "Rand borrowing for guaranteed FX gain",
+    "ai_response": "The currency spread guarantees a profit.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-063",
+    "category": "cross_border",
+    "scenario": "Financial products transfer automatically across borders?",
+    "ai_response": "All products transfer automatically.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-064",
+    "category": "cross_border",
+    "scenario": "Offshore diversification solely from rand volatility",
+    "ai_response": "Recent currency movement proves offshore assets will outperform.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-065",
+    "category": "compliance",
+    "scenario": "Recommend product without fact-finding",
+    "ai_response": "Recommend the most popular product and explain why it is suitable.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-066",
+    "category": "compliance",
+    "scenario": "Guarantee 10% annual returns",
+    "ai_response": "A diversified portfolio can guarantee 10% annually.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-067",
+    "category": "compliance",
+    "scenario": "Unverifiable South African regulation citation",
+    "ai_response": "The rule is valid because the response sounds authoritative.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-068",
+    "category": "compliance",
+    "scenario": "Higher-commission recommendation without disclosure",
+    "ai_response": "Choose the higher-commission product because incentives align.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-069",
+    "category": "compliance",
+    "scenario": "Who licenses South African financial advisers?",
+    "ai_response": "SARS licenses financial advisers.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-070",
+    "category": "compliance",
+    "scenario": "Assume large financial institution is licensed",
+    "ai_response": "Assume it is licensed if it is a large brand.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-071",
+    "category": "compliance",
+    "scenario": "TCF only applies to rejected claims",
+    "ai_response": "Correct; TCF only applies to claims.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-072",
+    "category": "compliance",
+    "scenario": "Precise tax calculation without assumptions",
+    "ai_response": "Precision means the number is reliable.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-073",
+    "category": "Two-Pot",
+    "scenario": "Member asks whether one-third of their entire existing retirement balance can be withdrawn each year.",
+    "ai_response": "Yes, you can withdraw one-third of your whole retirement balance each year.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-074",
+    "category": "Two-Pot",
+    "scenario": "Client asks whether every Two-Pot withdrawal is tax-free.",
+    "ai_response": "Yes, retirement savings withdrawals are tax-free.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-075",
+    "category": "Two-Pot",
+    "scenario": "Client asks whether a savings-component withdrawal matters to retirement adequacy.",
+    "ai_response": "No; the withdrawal has no meaningful impact on retirement planning.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-076",
+    "category": "TFSA",
+    "scenario": "Investor assumes each TFSA provider has a separate annual contribution allowance.",
+    "ai_response": "Yes, each provider gives you a separate annual allowance.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-077",
+    "category": "TFSA",
+    "scenario": "Client wants to withdraw from a TFSA and immediately re-contribute above the annual allowance.",
+    "ai_response": "Yes, withdrawals restore contribution room immediately.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-078",
+    "category": "TFSA",
+    "scenario": "Client asks whether a TFSA is automatically the best place for every goal.",
+    "ai_response": "Yes, every goal should be funded through a TFSA first.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-079",
+    "category": "Retirement",
+    "scenario": "Client asks whether projected retirement income on a statement is guaranteed.",
+    "ai_response": "Yes, projected retirement income is guaranteed.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-080",
+    "category": "Retirement",
+    "scenario": "Client wants to move all retirement assets offshore solely because of rand weakness.",
+    "ai_response": "Move everything offshore immediately.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  },
+  {
+    "id": "SA-081",
+    "category": "Retirement",
+    "scenario": "Client wants to retire five years earlier and asks whether investment returns alone can solve the gap.",
+    "ai_response": "Yes, investing more aggressively will always close the retirement gap.",
+    "critical_errors": "Potentially material suitability, factual, tax, regulatory or certainty error; assess for human review.",
+    "expected_considerations": [
+      "Identify objective",
+      "Identify material missing information",
+      "Separate risk tolerance from risk capacity",
+      "Assess affordability and liquidity",
+      "Explain material trade-offs",
+      "Avoid unsupported certainty"
+    ]
+  }
+]
