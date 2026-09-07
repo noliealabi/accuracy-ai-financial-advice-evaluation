@@ -115,6 +115,62 @@ st.warning(
 
 
 # ---------------------------------------------------------
+# How it works
+# ---------------------------------------------------------
+
+st.subheader("How it works")
+
+st.markdown(
+    """
+    This framework evaluates an AI-generated financial response against
+    client context, suitability, risk, affordability, clarity and outcome
+    considerations before identifying where the response can be improved.
+    """
+)
+
+workflow_1, workflow_2, workflow_3, workflow_4 = st.columns(4)
+
+with workflow_1:
+    st.markdown("### 1️⃣")
+    st.markdown("**Client Scenario**")
+    st.caption(
+        "Provide the client's financial situation, objectives, "
+        "constraints and relevant circumstances."
+    )
+
+with workflow_2:
+    st.markdown("### 2️⃣")
+    st.markdown("**AI Response**")
+    st.caption(
+        "Generate or enter the financial response that you want "
+        "the framework to evaluate."
+    )
+
+with workflow_3:
+    st.markdown("### 3️⃣")
+    st.markdown("**A.C.C.U.R.A.C.Y. Evaluation**")
+    st.caption(
+        "Score the response across eight dimensions, from Accuracy "
+        "and Client Context to Risk, Affordability and Outcome."
+    )
+
+with workflow_4:
+    st.markdown("### 4️⃣")
+    st.markdown("**Critical Safety Checks**")
+    st.caption(
+        "Identify material suitability concerns, unsupported claims, "
+        "excessive certainty and other critical weaknesses."
+    )
+
+st.info(
+    "🔄 **Next stage of the framework:** "
+    "The planned remediation workflow will identify missed factors, "
+    "generate an improved response, re-evaluate it and determine "
+    "whether human review is still required."
+)
+
+
+# ---------------------------------------------------------
 # Session state
 # ---------------------------------------------------------
 
