@@ -1,4 +1,3 @@
-
 import sys
 from pathlib import Path
 
@@ -10,9 +9,9 @@ from accuracy.scoring import evaluate_response
 from accuracy.reports import markdown_report
 
 
-# ---------------------------------------------------------
-# Page configuration
-# ---------------------------------------------------------
+# =========================================================
+# PAGE CONFIGURATION
+# =========================================================
 
 st.set_page_config(
     page_title="A.C.C.U.R.A.C.Y. AI Financial Advice Evaluator",
@@ -21,9 +20,9 @@ st.set_page_config(
 )
 
 
-# ---------------------------------------------------------
-# Visual styling
-# ---------------------------------------------------------
+# =========================================================
+# VISUAL STYLING
+# =========================================================
 
 st.markdown(
     """
@@ -37,7 +36,12 @@ st.markdown(
             border-radius: 18px;
             margin-bottom: 1.5rem;
             background:
-                linear-gradient(135deg, #003b2f 0%, #006b52 55%, #d4af37 100%);
+                linear-gradient(
+                    135deg,
+                    #003b2f 0%,
+                    #006b52 55%,
+                    #d4af37 100%
+                );
             color: white;
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
@@ -90,9 +94,9 @@ st.markdown(
 )
 
 
-# ---------------------------------------------------------
-# Hero
-# ---------------------------------------------------------
+# =========================================================
+# HERO
+# =========================================================
 
 st.markdown(
     """
@@ -114,9 +118,9 @@ st.warning(
 )
 
 
-# ---------------------------------------------------------
-# How it works
-# ---------------------------------------------------------
+# =========================================================
+# HOW IT WORKS
+# =========================================================
 
 st.subheader("How it works")
 
@@ -164,15 +168,15 @@ with workflow_4:
 
 st.info(
     "🔄 **Next stage of the framework:** "
-    "The planned remediation workflow will identify missed factors, "
-    "generate an improved response, re-evaluate it and determine "
-    "whether human review is still required."
+    "The remediation workflow identifies missed factors, "
+    "generates improvement guidance, supports an improved response, "
+    "and enables re-evaluation before human review."
 )
 
 
-# ---------------------------------------------------------
-# Session state
-# ---------------------------------------------------------
+# =========================================================
+# SESSION STATE
+# =========================================================
 
 if "generated_response" not in st.session_state:
     st.session_state.generated_response = ""
@@ -187,36 +191,37 @@ def set_generated_response(response_text: str):
     st.session_state.response_editor = response_text
 
 
-# ---------------------------------------------------------
-# Client scenario
-# ---------------------------------------------------------
+# =========================================================
+# 1. CLIENT SCENARIO
+# =========================================================
 
-st.subheader("1. Client scenario")
+st.subheader("1. Client Scenario")
 
 scenario = st.text_area(
     "Describe the client and their financial situation",
     height=190,
     placeholder=(
         "Example:\n"
-        "A 55-year-old South African client has R1.5 million saved for retirement. "
-        "The client has moderate risk tolerance, is concerned about investment "
-        "losses, and may need access to some money for emergencies."
+        "A 55-year-old South African client has R1.5 million saved "
+        "for retirement. The client has moderate risk tolerance, "
+        "is concerned about investment losses, and may need access "
+        "to some money for emergencies."
     ),
 )
 
 
-# ---------------------------------------------------------
-# AI response generation
-# ---------------------------------------------------------
+# =========================================================
+# 2. AI RESPONSE GENERATION
+# =========================================================
 
-st.subheader("2. Generate the AI financial response")
+st.subheader("2. Generate the AI Financial Response")
 
 col1, col2 = st.columns([2, 1])
 
 with col1:
     st.info(
-        "Instead of manually creating an AI response, you can generate one "
-        "from the client scenario and then evaluate it."
+        "Instead of manually creating an AI response, you can generate "
+        "one from the client scenario and then evaluate it."
     )
 
 with col2:
@@ -273,6 +278,7 @@ Instead, demonstrate what a responsible AI financial assistant might say
 while identifying information that would still need to be assessed.
 
 The response should demonstrate:
+
 - client context awareness
 - objectives
 - risk tolerance
@@ -299,7 +305,7 @@ Write the hypothetical AI financial response now.
     return response.output_text.strip()
 
 
-generate_col1, generate_col2 = st.columns([1, 1])
+generate_col1, generate_col2 = st.columns(2)
 
 with generate_col1:
     if st.button(
@@ -314,20 +320,31 @@ with generate_col1:
                     set_generated_response(
                         generate_openai_response(scenario)
                     )
+
                 st.success("AI response generated.")
+
             except Exception as exc:
                 st.error(
                     "The OpenAI generator could not be reached. "
                     "A local demonstration response has been generated instead."
                 )
-                set_generated_response(generate_demo_response(scenario))
+
+                set_generated_response(
+                    generate_demo_response(scenario)
+                )
+
                 st.caption(f"Technical detail: {exc}")
+
         else:
-            set_generated_response(generate_demo_response(scenario))
+            set_generated_response(
+                generate_demo_response(scenario)
+            )
+
             st.success(
                 "Demo response generated. Configure the OpenAI API key "
                 "to use the live AI generator."
             )
+
 
 with generate_col2:
     if st.button(
@@ -335,15 +352,18 @@ with generate_col2:
         use_container_width=True,
         disabled=not bool(scenario.strip()),
     ):
-        set_generated_response(generate_demo_response(scenario))
+        set_generated_response(
+            generate_demo_response(scenario)
+        )
+
         st.success("Demo response generated.")
 
 
-# ---------------------------------------------------------
-# Response editor
-# ---------------------------------------------------------
+# =========================================================
+# 3. AI RESPONSE
+# =========================================================
 
-st.subheader("3. AI response")
+st.subheader("3. AI Response")
 
 response = st.text_area(
     "Review or edit the AI-generated response before evaluation",
@@ -353,11 +373,11 @@ response = st.text_area(
 )
 
 
-# ---------------------------------------------------------
-# Evaluation
-# ---------------------------------------------------------
+# =========================================================
+# 4. A.C.C.U.R.A.C.Y. EVALUATION
+# =========================================================
 
-st.subheader("4. A.C.C.U.R.A.C.Y. evaluation")
+st.subheader("4. A.C.C.U.R.A.C.Y. Evaluation")
 
 if st.button(
     "🔍 Evaluate Response",
@@ -365,7 +385,9 @@ if st.button(
     use_container_width=True,
     disabled=not (scenario.strip() and response.strip()),
 ):
+
     with st.spinner("Evaluating response..."):
+
         evaluation = evaluate_response(
             scenario,
             response,
@@ -374,9 +396,9 @@ if st.button(
     st.session_state.evaluation = evaluation
 
 
-# ---------------------------------------------------------
-# Results
-# ---------------------------------------------------------
+# =========================================================
+# EVALUATION RESULTS
+# =========================================================
 
 if st.session_state.get("evaluation") is not None:
 
@@ -384,7 +406,7 @@ if st.session_state.get("evaluation") is not None:
 
     st.divider()
 
-    st.subheader("Evaluation result")
+    st.subheader("Evaluation Result")
 
     col1, col2, col3 = st.columns(3)
 
@@ -406,48 +428,84 @@ if st.session_state.get("evaluation") is not None:
             evaluation.classification,
         )
 
-    st.progress(evaluation.percentage / 100)
+    st.progress(
+        evaluation.percentage / 100
+    )
+
+
+    # =====================================================
+    # CRITICAL SAFETY SUMMARY
+    # =====================================================
 
     if evaluation.critical_flags:
+
         st.error(
             "⚠️ HUMAN REVIEW REQUIRED\n\n"
             + "\n".join(
-                f"• {flag}" for flag in evaluation.critical_flags
+                f"• {flag}"
+                for flag in evaluation.critical_flags
             )
         )
+
     else:
-        st.success("No critical flags were triggered by the evaluator.")
 
-    # -----------------------------------------------------
-    # Dimension breakdown
-    # -----------------------------------------------------
+        st.success(
+            "No critical flags were triggered by the evaluator."
+        )
 
-    st.subheader("Dimension breakdown")
 
-    dimensions = list(evaluation.scores.items())
+    # =====================================================
+    # DIMENSION BREAKDOWN
+    # =====================================================
+
+    st.subheader("Dimension Breakdown")
+
+    dimensions = list(
+        evaluation.scores.items()
+    )
 
     for name, score in dimensions:
+
         lost = 5 - score
 
-        c1, c2, c3 = st.columns([3, 1, 4])
+        c1, c2, c3 = st.columns(
+            [3, 1, 4]
+        )
 
         with c1:
-            st.write(f"**{name}**")
+            st.write(
+                f"**{name}**"
+            )
 
         with c2:
-            st.write(f"**{score}/5**")
+            st.write(
+                f"**{score}/5**"
+            )
 
         with c3:
-            if lost == 0:
-                st.write("✅ Full marks")
-            elif lost == 1:
-                st.write("⚠️ Lost 1 point")
-            else:
-                st.write(f"⚠️ Lost {lost} points")
 
-    # -----------------------------------------------------
-    # Where points were lost
-    # -----------------------------------------------------
+            if lost == 0:
+
+                st.write(
+                    "✅ Full marks"
+                )
+
+            elif lost == 1:
+
+                st.write(
+                    "⚠️ Lost 1 point"
+                )
+
+            else:
+
+                st.write(
+                    f"⚠️ Lost {lost} points"
+                )
+
+
+    # =====================================================
+    # WHERE POINTS WERE LOST
+    # =====================================================
 
     lost_points = [
         (name, score)
@@ -455,58 +513,167 @@ if st.session_state.get("evaluation") is not None:
         if score < 5
     ]
 
-    st.subheader("Where the response lost points")
+    st.subheader("Where the Response Lost Points")
 
     if not lost_points:
-        st.success("The response received full marks across all dimensions.")
+
+        st.success(
+            "The response received full marks across all dimensions."
+        )
+
     else:
+
         for name, score in lost_points:
+
             lost = 5 - score
 
             if score == 4:
+
                 explanation = (
-                    "Minor gap. The response covered this dimension reasonably "
-                    "well but did not receive full marks."
+                    "Minor gap. The response covered this dimension "
+                    "reasonably well but did not receive full marks."
                 )
+
             elif score == 3:
+
                 explanation = (
-                    "Partial coverage. Important elements were present, but "
-                    "the response did not fully address this dimension."
+                    "Partial coverage. Important elements were present, "
+                    "but the response did not fully address this dimension."
                 )
+
             elif score == 2:
+
                 explanation = (
-                    "Significant gap. Several relevant considerations were "
-                    "missing or weak."
+                    "Significant gap. Several relevant considerations "
+                    "were missing or weak."
                 )
+
             elif score == 1:
+
                 explanation = (
                     "Major deficiency. The response was materially weak "
                     "against this dimension."
                 )
+
             else:
+
                 explanation = (
-                    "Critical deficiency. This dimension was not adequately "
-                    "addressed."
+                    "Critical deficiency. This dimension was not "
+                    "adequately addressed."
                 )
 
             st.markdown(
-                f"**{name}: {score}/5 — Lost {lost} point(s).**  \n"
-                f"{explanation}"
+                f"**{name}: {score}/5 — Lost {lost} point(s).**"
             )
 
-    # -----------------------------------------------------
-    # Critical flags
-    # -----------------------------------------------------
+            st.write(
+                explanation
+            )
+
+
+    # =====================================================
+    # 5. IMPROVEMENT PLAN & REMEDIATION GUIDANCE
+    # =====================================================
+
+    st.subheader(
+        "5. Improvement Plan & Remediation Guidance"
+    )
+
+    if not lost_points:
+
+        st.success(
+            "No improvement areas identified. "
+            "The response received full marks across all dimensions."
+        )
+
+    else:
+
+        st.info(
+            "The improvement plan identifies the factors that prevented "
+            "the response from achieving a stronger A.C.C.U.R.A.C.Y. score."
+        )
+
+        improvement_guidance = {
+
+            "Accuracy": (
+                "Verify factual claims, avoid unsupported statements, "
+                "and qualify information where uncertainty exists."
+            ),
+
+            "Client Context": (
+                "Identify and address missing client circumstances such as "
+                "income, expenses, debt, dependants, assets, liquidity needs "
+                "and other material financial information."
+            ),
+
+            "Compliance": (
+                "Strengthen regulatory and professional-conduct awareness, "
+                "including appropriate disclosures and recognition of when "
+                "professional review is required."
+            ),
+
+            "Objectives": (
+                "Link the proposed approach more clearly to the client's "
+                "actual financial objectives, priorities and time horizon."
+            ),
+
+            "Risk": (
+                "Assess both risk tolerance and capacity for loss, while "
+                "addressing downside risk, time horizon and concentration."
+            ),
+
+            "Affordability": (
+                "Consider cash flow, debt, emergency reserves, liquidity "
+                "requirements and whether the proposed approach is "
+                "financially sustainable for the client."
+            ),
+
+            "Clarity": (
+                "Make assumptions, risks, trade-offs and limitations "
+                "easier for the client to understand."
+            ),
+
+            "Yield/Outcome": (
+                "Explain how the proposed approach could support the "
+                "intended financial outcome without implying guaranteed returns."
+            ),
+        }
+
+        for name, score in lost_points:
+
+            improvement = improvement_guidance.get(
+                name,
+                "Review this dimension and address the factors "
+                "that were missing."
+            )
+
+            st.markdown(
+                f"**{name} — {score}/5**"
+            )
+
+            st.markdown(
+                f"**Recommended improvement:** {improvement}"
+            )
+
+            st.divider()
+
+
+    # =====================================================
+    # CRITICAL FLAGS
+    # =====================================================
 
     if evaluation.critical_flags:
-        st.subheader("Critical flags")
+
+        st.subheader("Critical Flags")
 
         for flag in evaluation.critical_flags:
+
             st.error(flag)
 
-    # -----------------------------------------------------
-    # Download report
-    # -----------------------------------------------------
+
+    # =====================================================
+    # DOWNLOAD REPORT
+    # =====================================================
 
     report = markdown_report(
         "A.C.C.U.R.A.C.Y. Evaluation",
@@ -522,9 +689,9 @@ if st.session_state.get("evaluation") is not None:
     )
 
 
-# ---------------------------------------------------------
-# Footer
-# ---------------------------------------------------------
+# =========================================================
+# FOOTER
+# =========================================================
 
 st.markdown(
     """
