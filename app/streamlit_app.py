@@ -656,7 +656,532 @@ if st.session_state.get("evaluation") is not None:
             )
 
             st.divider()
+    # =====================================================
+    # 6. IMPROVEMENT & RE-EVALUATION
+    # =====================================================
 
+    st.subheader(
+        "6. Improvement & Re-evaluation"
+    )
+
+    st.write(
+        "The remediation workflow uses the original AI response, "
+        "the client scenario and the A.C.C.U.R.A.C.Y. dimensions where "
+        "points were lost to create a strengthened response. The revised "
+        "response can then be reviewed and re-evaluated using the same framework."
+    )
+
+
+    # -----------------------------------------------------
+    # Remediation session state
+    # -----------------------------------------------------
+
+    if "improved_response" not in st.session_state:
+        st.session_state.improved_response = ""
+
+    if "improved_response_editor" not in st.session_state:
+        st.session_state.improved_response_editor = ""
+
+    if "improved_evaluation" not in st.session_state:
+        st.session_state.improved_evaluation = None
+
+
+    # -----------------------------------------------------
+    # Identify dimensions where points were lost
+    # -----------------------------------------------------
+
+    remediation_targets = [
+        (name, score)
+        for name, score in evaluation.scores.items()
+        if score < 5
+    ]
+
+
+    # -----------------------------------------------------
+    # Display remediation targets
+    # -----------------------------------------------------
+
+    if remediation_targets:
+
+        st.markdown(
+            "### Remediation Targets"
+        )
+
+        for name, score in remediation_targets:
+
+            st.write(
+                f"**{name}: {score}/5** — "
+                f"{5 - score} point(s) available for improvement."
+            )
+
+    else:
+
+        st.success(
+            "The original response received full marks across all "
+            "A.C.C.U.R.A.C.Y. dimensions. No remediation is required."
+        )
+
+
+    # -----------------------------------------------------
+    # Demo remediation generator
+    # -----------------------------------------------------
+
+    def generate_improved_demo_response(
+        original_response,
+        client_scenario,
+        remediation_targets,
+    ):
+        """
+        Local remediation engine.
+
+        The original response remains the foundation of the revision.
+        The function strengthens it according to the dimensions where
+        points were lost.
+        """
+
+        original = original_response.strip()
+
+        improvement_points = []
+
+
+        for name, score in remediation_targets:
+
+            if name == "Accuracy":
+
+                improvement_points.append(
+                    "Any factual, tax, regulatory or product-specific "
+                    "claims should be verified before being relied upon."
+                )
+
+            elif name == "Client Context":
+
+                improvement_points.append(
+                    "The response should establish the client's relevant "
+                    "financial circumstances, including income, expenses, "
+                    "debt, dependants, existing assets, emergency reserves "
+                    "and liquidity requirements."
+                )
+
+            elif name == "Compliance":
+
+                improvement_points.append(
+                    "The response should clearly distinguish general "
+                    "financial information from personalised advice and "
+                    "should identify assumptions, limitations, risks and "
+                    "where professional assessment may be required."
+                )
+
+            elif name == "Objectives":
+
+                improvement_points.append(
+                    "The proposed approach should be linked explicitly "
+                    "to the client's financial objectives, priorities "
+                    "and investment time horizon."
+                )
+
+            elif name == "Risk":
+
+                improvement_points.append(
+                    "The response should consider both risk tolerance "
+                    "and capacity for loss, including downside risk, "
+                    "volatility, diversification and time horizon."
+                )
+
+            elif name == "Affordability":
+
+                improvement_points.append(
+                    "The response should consider cash flow, debt, "
+                    "emergency reserves, liquidity requirements and "
+                    "whether the proposed approach is financially "
+                    "sustainable."
+                )
+
+            elif name == "Clarity":
+
+                improvement_points.append(
+                    "The response should explain assumptions, risks, "
+                    "trade-offs and limitations in clear, plain language."
+                )
+
+            elif name == "Yield/Outcome":
+
+                improvement_points.append(
+                    "The response should explain realistic potential "
+                    "outcomes and trade-offs without implying guaranteed "
+                    "returns."
+                )
+
+
+        if improvement_points:
+
+            remediation_text = "\n\n".join(
+                f"- {point}"
+                for point in improvement_points
+            )
+
+        else:
+
+            remediation_text = (
+                "- Preserve the useful content of the original response "
+                "while making assumptions, risks, suitability and "
+                "trade-offs more explicit."
+            )
+
+
+        # IMPORTANT:
+        # The original response is deliberately retained as the foundation.
+        # We are NOT generating an unrelated generic response.
+
+        revised_response = (
+            f"{original}\n\n"
+            "Strengthened considerations based on the A.C.C.U.R.A.C.Y. review:\n\n"
+            f"{remediation_text}\n\n"
+            "These considerations should be integrated into the final "
+            "response before any specific personalised financial "
+            "recommendation is made."
+        )
+
+        return revised_response
+
+
+    # -----------------------------------------------------
+    # OpenAI remediation generator
+    # -----------------------------------------------------
+
+    def generate_improved_openai_response(
+        original_response,
+        client_scenario,
+        remediation_targets,
+    ):
+        """
+        Uses the OpenAI Responses API to genuinely rewrite the
+        original response using the identified weaknesses.
+
+        Returns None if OpenAI is unavailable.
+        """
+
+        try:
+
+            api_key = st.secrets.get(
+                "OPENAI_API_KEY"
+            )
+
+            if not api_key:
+                return None
+
+
+            from openai import OpenAI
+
+            client = OpenAI(
+                api_key=api_key
+            )
+
+
+            weaknesses = "\n".join(
+                f"- {name}: {score}/5"
+                for name, score in remediation_targets
+            )
+
+
+            prompt = f"""
+You are the remediation engine for the A.C.C.U.R.A.C.Y.
+AI Financial Advice Evaluation Framework.
+
+Your task is to improve an ORIGINAL AI-generated financial response.
+
+CLIENT SCENARIO:
+{client_scenario}
+
+ORIGINAL AI RESPONSE:
+{original_response}
+
+A.C.C.U.R.A.C.Y. DIMENSIONS WHERE POINTS WERE LOST:
+{weaknesses}
+
+Your task is to rewrite the ORIGINAL AI RESPONSE.
+
+IMPORTANT REQUIREMENTS:
+
+1. The ORIGINAL response must be the foundation of the revision.
+
+2. Preserve useful and accurate information from the original response.
+
+3. Do NOT simply generate a completely new generic response.
+
+4. Correct or strengthen the weaknesses identified by the
+   A.C.C.U.R.A.C.Y. evaluation.
+
+5. Use the client scenario to make the improvements relevant.
+
+6. Do not invent financial facts about the client.
+
+7. Identify information that would still need to be established
+   before making a personalised financial recommendation.
+
+8. Consider client context, objectives, risk tolerance, capacity
+   for loss, affordability, liquidity, diversification and
+   relevant risks where appropriate.
+
+9. Do not promise investment returns.
+
+10. Do not present unsupported product recommendations.
+
+11. Explain important risks and trade-offs clearly.
+
+12. Do not claim that the response is regulated personalised
+    financial advice.
+
+13. Produce ONLY the revised financial response.
+
+14. Do not explain your editing process.
+
+The desired transformation is:
+
+ORIGINAL RESPONSE
++
+IDENTIFIED WEAKNESSES
++
+CLIENT CONTEXT
+=
+GENUINELY IMPROVED RESPONSE
+"""
+
+
+            result = client.responses.create(
+                model="gpt-5.6-luna",
+                input=prompt,
+            )
+
+            return result.output_text.strip()
+
+
+        except Exception as exc:
+
+            st.warning(
+                "OpenAI remediation was unavailable. "
+                "The local remediation engine will be used instead."
+            )
+
+            st.caption(
+                f"Technical detail: {exc}"
+            )
+
+            return None
+
+
+    # -----------------------------------------------------
+    # Generate improved response
+    # -----------------------------------------------------
+
+    if st.button(
+        "✨ Generate Improved Response",
+        use_container_width=True,
+        disabled=not response.strip(),
+    ):
+
+        with st.spinner(
+            "Building improved response from the original response..."
+        ):
+
+            improved = generate_improved_openai_response(
+                original_response=response,
+                client_scenario=scenario,
+                remediation_targets=remediation_targets,
+            )
+
+
+            # Fall back to the local remediation engine
+            # if OpenAI is not configured or unavailable.
+
+            if not improved:
+
+                improved = generate_improved_demo_response(
+                    original_response=response,
+                    client_scenario=scenario,
+                    remediation_targets=remediation_targets,
+                )
+
+
+            st.session_state.improved_response = improved
+
+            st.session_state.improved_response_editor = improved
+
+            # Clear any previous re-evaluation because a new
+            # improved response has just been generated.
+
+            st.session_state.improved_evaluation = None
+
+
+        st.success(
+            "Improved response generated. "
+            "Review it before re-evaluation."
+        )
+
+
+    # -----------------------------------------------------
+    # Review improved response
+    # -----------------------------------------------------
+
+    if st.session_state.improved_response:
+
+        st.markdown(
+            "### Improved Response"
+        )
+
+        improved_response = st.text_area(
+            "Review or edit the improved response before re-evaluation",
+            height=350,
+            key="improved_response_editor",
+        )
+
+
+        # -------------------------------------------------
+        # Re-evaluate improved response
+        # -------------------------------------------------
+
+        if st.button(
+            "🔁 Re-evaluate Improved Response",
+            type="primary",
+            use_container_width=True,
+            disabled=not improved_response.strip(),
+        ):
+
+            with st.spinner(
+                "Re-evaluating improved response..."
+            ):
+
+                improved_evaluation = evaluate_response(
+                    scenario,
+                    improved_response,
+                )
+
+
+            st.session_state.improved_evaluation = (
+                improved_evaluation
+            )
+
+
+        # -------------------------------------------------
+        # Before vs After comparison
+        # -------------------------------------------------
+
+        if st.session_state.improved_evaluation:
+
+            improved_evaluation = (
+                st.session_state.improved_evaluation
+            )
+
+
+            original_score = evaluation.total
+
+            improved_score = improved_evaluation.total
+
+            score_delta = (
+                improved_score - original_score
+            )
+
+
+            original_percentage = (
+                evaluation.percentage
+            )
+
+            improved_percentage = (
+                improved_evaluation.percentage
+            )
+
+            percentage_delta = (
+                improved_percentage
+                - original_percentage
+            )
+
+
+            st.markdown(
+                "### Before vs After"
+            )
+
+
+            comparison_1, comparison_2, comparison_3 = (
+                st.columns(3)
+            )
+
+
+            with comparison_1:
+
+                st.metric(
+                    "Original Score",
+                    f"{original_score}/40",
+                )
+
+
+            with comparison_2:
+
+                st.metric(
+                    "Improved Score",
+                    f"{improved_score}/40",
+                    delta=f"{score_delta:+d}",
+                )
+
+
+            with comparison_3:
+
+                st.metric(
+                    "Percentage",
+                    f"{improved_percentage:.0f}%",
+                    delta=f"{percentage_delta:+.1f} pts",
+                )
+
+
+            # -------------------------------------------------
+            # Remediation outcome
+            # -------------------------------------------------
+
+            if improved_score > original_score:
+
+                st.success(
+                    f"✅ Remediation improved the score by "
+                    f"{score_delta} point(s)."
+                )
+
+            elif improved_score == original_score:
+
+                st.info(
+                    "ℹ️ The revised response received the same "
+                    "A.C.C.U.R.A.C.Y. score. The remediation did "
+                    "not materially change the evaluated quality."
+                )
+
+            else:
+
+                st.warning(
+                    f"⚠️ The revised response scored "
+                    f"{abs(score_delta)} point(s) lower. "
+                    "This is still a valuable QA result because "
+                    "remediation can introduce new weaknesses."
+                )
+
+
+            # -------------------------------------------------
+            # Re-check critical flags
+            # -------------------------------------------------
+
+            if improved_evaluation.critical_flags:
+
+                st.error(
+                    "⚠️ Critical flags remain in the improved response."
+                )
+
+                for flag in improved_evaluation.critical_flags:
+
+                    st.write(
+                        f"• {flag}"
+                    )
+
+            else:
+
+                st.success(
+                    "✅ No critical flags were detected in "
+                    "the improved response."
+                )
 
     # =====================================================
     # CRITICAL FLAGS
