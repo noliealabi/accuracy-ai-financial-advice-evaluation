@@ -1,36 +1,39 @@
 # A.C.C.U.R.A.C.Y. AI Financial Advice Evaluation Framework 🇿🇦
 
-**A human-centred framework for evaluating AI-generated financial advice across accuracy, client context, compliance, objectives, risk, affordability, clarity, and outcome alignment.**
+**A human-centred framework for evaluating whether AI-generated financial advice is not only factually correct, but contextually appropriate.**
 
-This project combines **financial-planning domain expertise with AI evaluation, rubric design, scenario-based benchmarking, explainable scoring, safety checks, and automated testing.**
+> **AI can know the rule without knowing the person behind the question.**
+
+## Why I Built This Project
+
+For most of my career, I have worked with people making decisions about money.
+
+A client may ask a seemingly simple question:
+
+- Should I withdraw money from my retirement savings?
+- Should I pay off my debt?
+- Should I change my investment strategy because I am approaching retirement?
+- Should I move my portfolio into cash?
+
+In financial planning, the question is rarely the whole problem.
+
+Before making a recommendation, a financial adviser needs to understand the person behind the question: their circumstances, financial literacy, objectives, affordability, liquidity, risk tolerance, risk capacity, existing assets and liabilities, and the consequences of the decision over both the short and long term.
+
+That human context can change the meaning of an otherwise straightforward financial question.
+
+This became the starting point for A.C.C.U.R.A.C.Y.
+
+I wanted to explore the gap between **factual financial information and contextualised financial advice**:
+
+> **Can an AI response be factually correct while still being incomplete, unsuitable, or unsafe for the person asking the question?**
+
+A.C.C.U.R.A.C.Y. provides a structured way to investigate that question.
+
+It evaluates AI-generated financial responses across eight dimensions, combining financial-domain reasoning with scenario-based benchmarking, rubric design, safety checks, explainable scoring and human-review indicators.
+
+The project currently focuses on **South African financial-planning scenarios**, where retirement systems, taxation, regulation and financial-services practices provide a specific jurisdictional context for evaluation.
 
 > **Important:** This is an AI evaluation and research project using synthetic scenarios. It is not financial, legal, tax, or investment advice.
-
----
-
-## Why This Project Exists
-
-Large language models can produce financial responses that sound confident and professional while missing important suitability considerations.
-
-A useful financial-advice evaluation system therefore needs to ask more than:
-
-> **“Is the answer factually correct?”**
-
-It should also ask:
-
-- Did the response understand the client's circumstances?
-- Did it identify the client's actual objectives?
-- Did it distinguish **risk tolerance from risk capacity**?
-- Did it consider **liquidity and affordability**?
-- Did it recognise material risks?
-- Did it avoid unsupported guarantees?
-- Did it communicate uncertainty appropriately?
-- Did it recognise when human or professional review is required?
-- Does the proposed approach plausibly support the intended outcome?
-
-A.C.C.U.R.A.C.Y. was designed to provide a structured way of answering those questions.
-
----
 
 ## Evaluation Philosophy
 
@@ -123,6 +126,18 @@ The benchmark covers financial-planning decision points including:
 - Treating Customers Fairly considerations
 
 The scenarios are synthetic and intended for **evaluation, testing, benchmarking, and research**.
+
+---
+
+## Ground-Truth Development
+
+The 81-scenario benchmark provides the underlying South African evaluation dataset, with each scenario containing expected evaluation considerations.
+
+As part of ongoing framework development, a first sample of **10 scenarios (SA-001 to SA-010)** has been developed with expanded ground-truth evaluation criteria. These criteria make the expected reasoning, material client information, factual considerations, suitability issues, risks, trade-offs and potential human-review triggers more explicit.
+
+The remaining scenarios retain the Version 3 evaluation structure while the ground-truth methodology is developed and refined.
+
+This staged approach allows the evaluation methodology to be tested and refined on a defined sample before being considered for broader application across the benchmark.
 
 ---
 
