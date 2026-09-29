@@ -2,10 +2,10 @@
 
 ## Status
 
-**Validation phase:** Baseline calibration  
+**Validation phase:** Baseline calibration complete  
 **Scenario:** SA-001 — Two-Pot withdrawal for renovation  
 **Evaluator baseline:** `accuracy/scoring.py` Version 3  
-**Automated results:** Pending execution in the repository test environment  
+**Automated results:** Captured from the current evaluator in the Codespace  
 **Gold scores:** Provisional expert reference scores
 
 ## Purpose
@@ -80,19 +80,86 @@ Scores use the existing 0–5 scale across the eight A.C.C.U.R.A.C.Y. dimensions
 
 These are **provisional reference scores**. They must be reviewed against independent domain review before being treated as validated gold labels.
 
-## Automated evaluation
+## Automated baseline results
 
-The current `evaluate_response()` implementation is deliberately retained unchanged for this baseline experiment.
+The current `evaluate_response()` implementation was run unchanged.
 
-For each response, record:
+| Dimension | R1 Auto | R1 Gold | R2 Auto | R2 Gold | R3 Auto | R3 Gold | R4 Auto | R4 Gold | R5 Auto | R5 Gold |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Accuracy | 3 | 1 | 4 | 3 | 3 | 4 | 4 | 4 | 3 | 5 |
+| Client Context | 2 | 0 | 4 | 1 | 4 | 3 | 4 | 5 | 4 | 5 |
+| Compliance | 3 | 0 | 3 | 1 | 3 | 2 | 4 | 4 | 4 | 5 |
+| Objectives | 2 | 0 | 3 | 2 | 4 | 4 | 4 | 5 | 4 | 5 |
+| Risk | 2 | 0 | 3 | 0 | 3 | 1 | 3 | 2 | 4 | 5 |
+| Affordability | 2 | 0 | 3 | 1 | 3 | 4 | 4 | 5 | 4 | 5 |
+| Clarity | 2 | 3 | 3 | 4 | 4 | 4 | 5 | 5 | 4 | 5 |
+| Yield/Outcome | 3 | 0 | 3 | 1 | 3 | 2 | 4 | 3 | 4 | 4 |
+| **Total / 40** | **19** | **4** | **26** | **13** | **27** | **24** | **32** | **33** | **31** | **39** |
 
-- eight automated dimension scores;
-- total score;
-- percentage;
-- classification;
-- critical flags.
+### Classification comparison
 
-Do not alter the evaluator before recording the baseline.
+| Response | Human reference | Automated |
+|---|---|---|
+| R1 | 4/40 | 19/40 — Weak |
+| R2 | 13/40 | 26/40 — Acceptable with review |
+| R3 | 24/40 | 27/40 — Acceptable with review |
+| R4 | 33/40 | 32/40 — Strong |
+| R5 | 39/40 | 31/40 — Acceptable with review |
+
+The automated evaluator therefore compresses the calibration range substantially: the provisional human range is **4–39**, while the automated range is **19–32**.
+
+## Disagreement analysis
+
+### R1 — major over-scoring
+
+The evaluator gives credit for several dimensions despite the response providing almost no supporting reasoning. The largest issue is the default **3/5 baseline**: a response can omit a criterion and still retain a middle score unless a specific rule detects the omission.
+
+The response also receives Yield/Outcome = 3 even though it does not meaningfully assess an outcome.
+
+**Primary causes:** baseline-score inflation, missing-criterion detection, keyword/length limitations.
+
+### R2 — major over-scoring
+
+The response mentions a qualifying withdrawal, renovation, debt and completion of the renovation, so keyword rules award credit. However, it explicitly recommends withdrawing the full amount without establishing the client's circumstances or assessing the retirement trade-off.
+
+The automated Risk score remains 3 because the current aggressive-recommendation rule does not treat “withdraw the full amount” as an aggressive recommendation for this scenario. Affordability also remains 3 rather than recognising the absence of an affordability assessment.
+
+**Primary causes:** false positive from lexical evidence, missing suitability reasoning, incomplete scenario-specific recommendation detection.
+
+### R3 — moderate disagreement
+
+This response contains useful context and objective considerations, which the evaluator recognises. However, it does not explicitly address risk tolerance/risk capacity, and its affordability score remains below the provisional human reference despite discussing cash reserves and debt.
+
+**Primary causes:** false negatives/limited semantic interpretation and criterion-specific evidence rules.
+
+### R4 — close total, but dimension-level disagreement
+
+The total is close to the provisional reference (32 vs 33), but the dimensions do not align perfectly. Client Context and Objectives are under-scored because the evaluator recognises some terms but does not reliably distinguish comprehensive evidence from partial evidence. Risk is over-scored because the response discusses financial considerations but does not explicitly establish risk tolerance and risk capacity. Clarity and Yield/Outcome are also affected by lexical heuristics.
+
+This is important: a close total does **not** mean the evaluator is calibrated. Dimension-level validity matters.
+
+**Primary causes:** severity error, missing-criterion detection and keyword dependency.
+
+### R5 — major under-scoring
+
+R5 is the strongest response in the provisional human reference, yet the automated evaluator produces 31/40. The most visible issue is Accuracy = 3 despite extensive uncertainty and verification language. The current certainty logic appears to be sensitive to the interaction between risky certainty patterns and safe-uncertainty patterns rather than evaluating the response's overall treatment of uncertainty.
+
+Several other dimensions remain at 4 because the rules generally provide a single keyword-triggered uplift rather than distinguishing strong, comprehensive evidence from merely adequate evidence.
+
+**Primary causes:** severity error, ceiling effects in the rule system, keyword dependency and limited semantic assessment.
+
+## What the baseline demonstrates
+
+The baseline provides evidence for the following methodological problems:
+
+1. **The 3/5 default is too permissive for omission-heavy responses.**
+2. **Keyword presence can produce credit without sufficient reasoning.**
+3. **The evaluator does not reliably distinguish partial from comprehensive treatment of a criterion.**
+4. **Scenario-specific suitability failures are not fully captured.**
+5. **Strong responses can be under-scored because the rules do not adequately represent nuanced reasoning.**
+6. **Total-score agreement can conceal dimension-level disagreement.**
+
+The calibration therefore supports revisiting the scoring methodology, but it does **not** justify changing individual rules simply to force the five responses to match the provisional reference scores.
 
 ## Disagreement taxonomy
 
@@ -106,15 +173,17 @@ For every difference between the human reference and automated result, classify 
 - **Length dependency:** response length changes the score without sufficient evidence of quality.
 - **Scenario sensitivity:** the same response behaviour is scored differently depending on scenario-specific facts.
 
-## Initial hypothesis to test
+## Initial hypothesis — baseline result
 
-The current evaluator starts all dimensions at **3/5** and then adjusts scores using lexical triggers, response length and selected scenario-response interactions.
-
-This creates a validity question:
+The original hypothesis was:
 
 > Does mentioning a concept produce credit even when the response does not actually reason through that concept?
 
-The calibration set is designed to test this directly.
+**SA-001 baseline evidence: yes, in several dimensions.**
+
+R1 and R2 are the clearest examples: the evaluator awards substantial credit despite limited or absent evidence for several ground-truth requirements. Conversely, R5 demonstrates the opposite problem: a response can provide extensive, relevant reasoning and still fail to receive full credit because the rules do not represent that reasoning adequately.
+
+This suggests that the next methodology should evaluate **evidence quality and criterion coverage**, rather than relying primarily on keyword presence and a 3/5 default.
 
 ## Acceptance criteria for the next revision
 
@@ -126,7 +195,20 @@ The process is:
 
 No scoring rule should be added solely to make the automated score match a desired result.
 
+Before changing `accuracy/scoring.py`, the next step is to define a small, explicit evidence rubric for each dimension and test that rubric against R1–R5.
+
+## Validation result
+
+**SA-001 baseline: PASS**
+
+The test harness successfully executed all five calibration responses plus the calibration-set integrity test:
+
+`6 passed in 0.12s`
+
+The baseline evaluator was not modified.
+
 ## Next step
 
-Run R1–R5 through the exact current evaluator and record the results in this document. Then compare the automated output with the provisional expert reference before changing `accuracy/scoring.py`.
+Do **not** change `accuracy/scoring.py) yet.
 
+First, convert the disagreement findings above into an explicit **SA-001 evidence rubric** for the eight dimensions. That rubric will define what constitutes 0, 1, 2, 3, 4 and 5 evidence for each dimension. The revised scoring logic can then be designed against the rubric and tested against the frozen R1–R5 calibration set.
