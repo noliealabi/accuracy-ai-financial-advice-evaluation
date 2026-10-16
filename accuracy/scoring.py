@@ -85,17 +85,29 @@ def evaluate_response(scenario: str, response: str) -> Evaluation:
     flags = []
 
     # Client context
-    context_terms = [
-        "age", "income", "salary", "expenses", "dependants",
-        "retirement", "horizon", "liquidity", "emergency",
-        "debt", "goals", "objective", "financial position",
+    # Score demonstrated evidence across distinct client-context categories.
+    context_evidence = [
+        _contains_any(response, ["renovation", "purpose", "need", "urgency"]),
+        _contains_any(response, ["amount required", "amount actually required", "how much"]),
+        _contains_any(response, ["income", "salary", "expenses", "monthly expenses"]),
+        _contains_any(response, ["debt", "existing debt"]),
+        _contains_any(response, ["emergency fund", "emergency reserve", "cash reserves", "liquidity"]),
+        _contains_any(response, ["retirement savings", "retirement capital", "other assets", "assets"]),
+        _contains_any(response, ["retirement objective", "retirement objectives", "retirement position"]),
     ]
 
-    if _contains_any(response, context_terms):
-        scores["Client Context"] = 4
+    context_evidence_count = sum(context_evidence)
 
-    if len(scenario.split()) > 25 and not _contains_any(response, context_terms):
-        scores["Client Context"] = 2
+    if context_evidence_count == 0:
+        scores["Client Context"] = 0
+    elif context_evidence_count == 1:
+        scores["Client Context"] = 1
+    elif context_evidence_count <= 5:
+        scores["Client Context"] = 3
+    elif context_evidence_count == 6:
+        scores["Client Context"] = 4
+    else:
+        scores["Client Context"] = 5
 
     # Risk
     risk_terms = [
@@ -188,14 +200,34 @@ def evaluate_response(scenario: str, response: str) -> Evaluation:
         scores["Objectives"] = 4
 
     # Compliance / suitability
-    compliance_terms = [
-        "suitability", "disclosure", "fees", "costs",
-        "tax", "regulation", "licensed", "adviser",
-        "financial advisor", "advice",
+    # Compliance credit requires demonstrated evidence, not merely a
+    # compliance-related keyword.
+    compliance_strong_terms = [
+        "suitability", "tax", "withdrawal rules",
+        "administrative rules", "administrative requirements",
+        "verify", "verified", "check the applicable",
+        "net amount", "fees and costs", "fees", "costs",
+        "disclosure", "regulation", "regulatory requirements",
     ]
 
-    if _contains_any(response, compliance_terms):
+    compliance_weak_terms = [
+        "may be available", "qualifying", "licensed",
+        "adviser", "financial advisor", "advice",
+    ]
+
+    strong_compliance_evidence = _contains_any(
+        response, compliance_strong_terms
+    )
+    weak_compliance_evidence = _contains_any(
+        response, compliance_weak_terms
+    )
+
+    if strong_compliance_evidence:
         scores["Compliance"] = 4
+    elif weak_compliance_evidence:
+        scores["Compliance"] = 1
+    else:
+        scores["Compliance"] = 0
 
     guarantee_terms = [
         "guaranteed return",
@@ -214,11 +246,13 @@ def evaluate_response(scenario: str, response: str) -> Evaluation:
     # from responsible caveats such as "returns are not guaranteed".
 
     risky_certainty_patterns = [
-        r"\bguaranteed\\s+(?:return|returns|profit|growth|income|outcome)\b",
+        r"\bguarantees?\s+(?:return|returns|profit|growth|income|outcome)\b",
+
+        r"\bguaranteed\s+(?:return|returns|profit|growth|income|outcome)\b",
         r"\b(?:risk[- ]free|no risk)\b",
-        r"\bwill\\s+(?:grow|outperform|increase|decrease|generate|deliver)\b",
-        r"\bwill\\s+(?:provide|produce)\\s+(?:a|an|the)?\\s*(?:return|profit|income|growth)\b",
-        r"\b(?:certain|sure)\\s+(?:return|profit|outcome|growth)\b",
+        r"\bwill\s+(?:grow|outperform|increase|decrease|generate|deliver)\b",
+        r"\bwill\s+(?:provide|produce)\s+(?:a|an|the)?\s*(?:return|profit|income|growth)\b",
+        r"\b(?:certain|sure)\s+(?:return|profit|outcome|growth)\b",
         r"\bthere is no risk\b",
     ]
 
